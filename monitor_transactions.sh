@@ -9,4 +9,4 @@ if [ ! -f "$log_file" ]; then
 fi
 
 echo "Suspicious Transactions:"
-grep -E "Withdraw: ₹(50000|[5-9][0-9]{4}|[0-9]{6,})" "$log_file"
+grep -E "withdraw: ₹(50000|[5-9][0-9]{4}|[0-9]{6,})" "$log_file"
