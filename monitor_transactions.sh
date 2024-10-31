@@ -1,2 +1,12 @@
-echo "Suspicious Transactions (Withdrawals of ₹50,000 or more):"
-grep -E "Withdraw: (50000|[5-9][0-9]{4}|[1-9][0-9]{5,})" transaction_log.txt || echo "No suspicious transactions found."
+#!/bin/bash
+
+log_file="transaction_log.txt"
+
+# Check if log file exists
+if [ ! -f "$log_file" ]; then
+  echo "No transaction log file found."
+  exit 1
+fi
+
+echo "Suspicious Transactions:"
+grep -E "Withdraw: ₹(50000|[5-9][0-9]{4}|[0-9]{6,})" "$log_file"
