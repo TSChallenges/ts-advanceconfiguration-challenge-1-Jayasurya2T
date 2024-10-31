@@ -13,5 +13,5 @@ echo "$timestamp | Account: $account_number | $transaction_type: $amount" >> tra
 
 # Check if the transaction is a high-value withdrawal
 if [ "$transaction_type" == "withdraw" ] && [ "$amount" -ge 50000 ]; then
-  echo "ALERT: High-value transaction detected! Withdrawal: ₹$amount"
+  echo "ALERT: High-value transaction detected! withdrawal: ₹$amount"
 fi
